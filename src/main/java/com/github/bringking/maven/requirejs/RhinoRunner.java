@@ -85,6 +85,7 @@ public class RhinoRunner implements Runner {
         contextFactory.call( new ContextAction() {
             @Override
             public Object run( Context cx ) {
+            	cx.setOptimizationLevel(-1);
                 cx.setErrorReporter( reporter );
                 processFile( cx, args );
                 return null;
